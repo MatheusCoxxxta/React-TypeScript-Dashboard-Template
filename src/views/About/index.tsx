@@ -1,7 +1,8 @@
 import React from "react";
+import Card from "../../components/Card";
 
 const About: React.FC = () => {
-  return <h1>About</h1>;
+  return <Card title="About"></Card>;
 };
 
 export default About;
