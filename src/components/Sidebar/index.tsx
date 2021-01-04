@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link, BrowserRouter } from "react-router-dom";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -15,36 +15,34 @@ const Sidebar = (props: { title: string }) => {
 
   return (
     <div className="sidebar">
-      <Router>
-        <ListItem className="title" button>
-          <ListItemIcon>
-            <DashboardRoundedIcon />
-          </ListItemIcon>
-          <ListItemText>{title}</ListItemText>
-        </ListItem>
+      <ListItem className="title" button>
+        <ListItemIcon>
+          <DashboardRoundedIcon />
+        </ListItemIcon>
+        <ListItemText>{title}</ListItemText>
+      </ListItem>
 
-        <List disablePadding dense>
-          <Link to="/">
-            <ListItem button>
-              <ListItemIcon>
-                <HomeRoundedIcon />
-              </ListItemIcon>
-              <ListItemText>Home</ListItemText>
-              <Arrow className="state" />
-            </ListItem>
-          </Link>
+      <List disablePadding dense>
+        <a href="/">
+          <ListItem button>
+            <ListItemIcon>
+              <HomeRoundedIcon />
+            </ListItemIcon>
+            <ListItemText>Home</ListItemText>
+            <Arrow className="state" />
+          </ListItem>
+        </a>
 
-          <Link to="/about">
-            <ListItem button>
-              <ListItemIcon>
-                <InfoRoundedIcon />
-              </ListItemIcon>
-              <ListItemText>About</ListItemText>
-              <Arrow className="state" />
-            </ListItem>
-          </Link>
-        </List>
-      </Router>
+        <a href="/about">
+          <ListItem button>
+            <ListItemIcon>
+              <InfoRoundedIcon />
+            </ListItemIcon>
+            <ListItemText>About</ListItemText>
+            <Arrow className="state" />
+          </ListItem>
+        </a>
+      </List>
     </div>
   );
 };
